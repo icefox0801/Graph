@@ -1,0 +1,25 @@
+{
+  "name": "private",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icefox0801/graph.git"
+  },
+  "author": "icefox0801 <icefox0801@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icefox0801/graph/issues"
+  },
+  "homepage": "https://github.com/icefox0801/graph#readme",
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-standard": "^16.0.2",
+    "express": "^4.17.1",
+    "inquirer": "^7.3.3"
+  }
+}
