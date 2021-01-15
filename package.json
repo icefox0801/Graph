@@ -8,18 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/icefox0801/graph.git"
+    "url": "git+https://github.com/icefox0801/algorithm.git"
   },
   "author": "icefox0801 <icefox0801@hotmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/icefox0801/graph/issues"
+    "url": "https://github.com/icefox0801/algorithm/issues"
   },
-  "homepage": "https://github.com/icefox0801/graph#readme",
+  "homepage": "https://github.com/icefox0801/algorithm#readme",
   "devDependencies": {
     "eslint": "^7.15.0",
     "eslint-config-standard": "^16.0.2",
-    "express": "^4.17.1",
     "inquirer": "^7.3.3"
   }
 }
