@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const DisjointUnionSet = require('./disjoint-union-set');
+const DisjointSet = require('./disjoint-set');
 
 const topological_sorting_directed_bfs_queue = require('./topological-sorting/directed/bfs/queue');
 const topological_sorting_directed_dfs_stack = require('./topological-sorting/directed/dfs/stack');
@@ -26,7 +26,7 @@ const divide = function (dj_set) {
     .join(' ')
 };
 
-const disjointUnionSetPrompt = function () {
+const disjointSetPrompt = function () {
   inquirer
     .prompt([{
       type: 'number',
@@ -39,7 +39,7 @@ const disjointUnionSetPrompt = function () {
     }])
     .then(async answers => {
       const size = ~~answers.size;
-      const dj_set = new DisjointUnionSet(size);
+      const dj_set = new DisjointSet(size);
       console.log(divide(dj_set));
 
       // eslint-disable-next-line no-constant-condition
@@ -153,8 +153,8 @@ inquirer
   .then(answers => {
     console.log(answers.entry);
     switch (answers.entry) {
-      case 'disjoint union set':
-        disjointUnionSetPrompt();
+      case 'disjoint set':
+        disjointSetPrompt();
         break;
       case 'topological sorting':
         topoLogicalSortingPrompt();

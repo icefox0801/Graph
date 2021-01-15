@@ -1,4 +1,4 @@
-module.exports = class DisjointUnionSet {
+module.exports = class DisjointSet {
   constructor (size) {
     this.parent = Array.from({ length: size }, (v, k) => k);
     this.rank = Array(size).fill(0);
