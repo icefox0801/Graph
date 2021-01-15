@@ -12,7 +12,7 @@ module.exports = function () {
       message: 'Please input the numbers of the array',
       default: '3 12 3 2 6 10 11 20 9 10 5 -1 8 7 1 0 14',
       validate: input => {
-        const regex = /\w+(\w+(\s+|,|;))/
+        const regex = /(\w+(\s+|,|;))*\w+/
         return regex.test(input);
       }
     }])
