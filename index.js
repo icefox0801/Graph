@@ -4,6 +4,7 @@ const disjointSetPrompt = require('./disjoint-set');
 const topoLogicalSortingPrompt = require('./topological-sorting');
 const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
 const priorityQueuePrompt = require('./priority-queue');
+const mstPrompt = require('./mst');
 
 inquirer
   .prompt([{
@@ -13,7 +14,8 @@ inquirer
       'disjoint set',
       'topological sorting',
       'pigeonhole principle',
-      'priority queue'
+      'priority queue',
+      'minimum spanning tree'
     ],
     default: 0
   }])
@@ -31,6 +33,9 @@ inquirer
         break;
       case 'priority queue':
         priorityQueuePrompt();
+        break;
+      case 'minimum spanning tree':
+        mstPrompt();
         break;
       default:
         break;

@@ -9,7 +9,20 @@ const topological_sorting_undirected_bfs_queue = require('./undirected/bfs/queue
 const topological_sorting_undirected_dfs_stack = require('./undirected/dfs/stack');
 const topological_sorting_undirected_dfs_recursion = require('./undirected/dfs/recursion');
 
-const DEFAULT_EDGES = [[1, 2], [2, 3], [1, 4], [2, 5], [2, 6], [3, 6], [4, 8], [5, 7], [5, 8], [6, 8], [8, 9]];
+const DEFAULT_EDGES = [
+  [0, 4],
+  [1, 2],
+  [2, 3],
+  [1, 4],
+  [2, 5],
+  [2, 6],
+  [3, 6],
+  [4, 8],
+  [5, 7],
+  [5, 8],
+  [6, 8],
+  [8, 9]
+];
 
 module.exports = function () {
   inquirer
@@ -32,7 +45,7 @@ module.exports = function () {
           type: 'input',
           message: 'Please input the edges of the directed graph',
           name: 'numbers',
-          default: '',
+          default: '0,1',
           validate: input => {
             if (!input) return true;
 
