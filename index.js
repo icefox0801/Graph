@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 
+const stringSearchPrompt = require('./string-search');
 const disjointSetPrompt = require('./disjoint-set');
 const topoLogicalSortingPrompt = require('./topological-sorting');
 const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
@@ -11,6 +12,7 @@ inquirer
     type: 'list',
     name: 'entry',
     choices: [
+      'string search',
       'disjoint set',
       'topological sorting',
       'pigeonhole principle',
@@ -22,6 +24,9 @@ inquirer
   .then(answers => {
     console.log(answers.entry);
     switch (answers.entry) {
+      case 'string search':
+        stringSearchPrompt();
+        break;
       case 'disjoint set':
         disjointSetPrompt();
         break;
