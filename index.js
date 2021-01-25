@@ -6,6 +6,7 @@ const topoLogicalSortingPrompt = require('./topological-sorting');
 const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
 const priorityQueuePrompt = require('./priority-queue');
 const mstPrompt = require('./mst');
+const triePrompt = require('./trie');
 
 inquirer
   .prompt([{
@@ -17,7 +18,8 @@ inquirer
       'topological sorting',
       'pigeonhole principle',
       'priority queue',
-      'minimum spanning tree'
+      'minimum spanning tree',
+      'trie'
     ],
     default: 0
   }])
@@ -41,6 +43,9 @@ inquirer
         break;
       case 'minimum spanning tree':
         mstPrompt();
+        break;
+      case 'trie':
+        triePrompt();
         break;
       default:
         break;
