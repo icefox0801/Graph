@@ -7,6 +7,7 @@ const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
 const priorityQueuePrompt = require('./priority-queue');
 const mstPrompt = require('./MST');
 const triePrompt = require('./trie');
+const lisPrompt = require('./LIS');
 
 inquirer
   .prompt([{
@@ -17,6 +18,7 @@ inquirer
       'disjoint set',
       'topological sorting',
       'pigeonhole principle',
+      'longest increasing subsequence',
       'priority queue',
       'minimum spanning tree',
       'trie'
@@ -37,6 +39,9 @@ inquirer
         break;
       case 'pigeonhole principle':
         pigeonholePrinciplePrompt();
+        break;
+      case 'longest increasing subsequence':
+        lisPrompt();
         break;
       case 'priority queue':
         priorityQueuePrompt();
