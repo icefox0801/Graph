@@ -5,7 +5,7 @@ const disjointSetPrompt = require('./disjoint-set');
 const topoLogicalSortingPrompt = require('./topological-sorting');
 const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
 const priorityQueuePrompt = require('./priority-queue');
-const mstPrompt = require('./mst');
+const mstPrompt = require('./MST2');
 const triePrompt = require('./trie');
 
 inquirer
