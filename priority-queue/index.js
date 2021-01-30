@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 
-const MaxHeap = require('./MaxHeap');
-const MinHeap = require('./MinHeap');
+const PriorityQueue = require('./PriorityQueue');
 
 module.exports = function () {
   inquirer
@@ -19,9 +18,9 @@ module.exports = function () {
       let heap = null;
 
       if (answers.type === 'min heap') {
-        heap = new MinHeap();
+        heap = new PriorityQueue((a, b) => a - b);
       } else {
-        heap = new MaxHeap();
+        heap = new PriorityQueue((a, b) => b - a);
       }
 
       // eslint-disable-next-line no-constant-condition
