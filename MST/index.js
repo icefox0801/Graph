@@ -5,7 +5,6 @@ const randomGraph = require('../utils/randomGraph');
 
 const prim_mst = require('./prim');
 const kruskal_mst = require('./kruskal');
-const { random } = require('lodash');
 
 module.exports = function () {
   inquirer
@@ -56,7 +55,7 @@ module.exports = function () {
         edges.push(numbers);
       }
 
-      if (!edges.length) edges = randomGraph(10, { type: 'mst' });
+      if (!edges.length) edges = randomGraph(size, { type: 'mst' });
 
       console.log(`[ ${edges.map(edge => `[ ${edge.join(', ')} ]`).join(', ')} ]\n`);
 

@@ -1,6 +1,7 @@
 const _ = require('lodash');
 
 const MIN_FACTOR = 10;
+const MAX_FACTOR = 20;
 
 class DisjointSet {
   constructor (size) {
@@ -35,15 +36,16 @@ class DisjointSet {
 
 function weight (type, i, j, size) {
   let w = 0;
-  let factor = Math.max(size, MIN_FACTOR);
   let d = Math.abs(j - i);
+  let shortFactor  = ~~(d * Math.log2(Math.max(size, MIN_FACTOR)));
+  let mstFactor = Math.min(Math.max(size, MIN_FACTOR), MAX_FACTOR);
 
   switch (type) {
     case 'short':
-      w = _.random(0, d * d) > size / 5 ? -1 : _.random(1, ~~(d * Math.log2(factor)));
+      w = _.random(0, d * d) > size / 5 ? -1 : _.random(1, shortFactor);
       break;
     case 'mst':
-      w = _.random(0, 1) ? -1 : _.random(1, factor);
+      w = _.random(0, 1) ? -1 : _.random(1, mstFactor);
       break;
     default:
       break;
