@@ -1,11 +1,9 @@
 const inquirer = require('inquirer');
 
-const wrap = require('../utils/wrapMST');
 const randomGraph = require('../utils/randomGraph');
 
-const prim_mst = require('./prim');
-const kruskal_mst = require('./kruskal');
-const { random } = require('lodash');
+const floyd = require('./floyd');
+// const kruskal_mst = require('./kruskal');
 
 module.exports = function () {
   inquirer
@@ -56,11 +54,10 @@ module.exports = function () {
         edges.push(numbers);
       }
 
-      if (!edges.length) edges = randomGraph(10, { type: 'mst' });
+      if (!edges.length) edges = randomGraph(size, { type: 'short' });
 
       console.log(`[ ${edges.map(edge => `[ ${edge.join(', ')} ]`).join(', ')} ]\n`);
 
-      wrap('PRIM_ALGORITHM', prim_mst)(size, edges);
-      wrap('KRUSKAL_ALGORITHM', kruskal_mst)(size, edges);
+      console.log(`FLOYD:\n${floyd(size, edges)}\n`);
     });
 };

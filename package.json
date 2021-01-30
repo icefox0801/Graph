@@ -19,6 +19,7 @@
   "devDependencies": {
     "eslint": "^7.15.0",
     "eslint-config-standard": "^16.0.2",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "lodash": "^4.17.20"
   }
 }

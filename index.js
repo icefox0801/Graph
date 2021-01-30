@@ -1,13 +1,5 @@
+/* eslint-disable no-case-declarations */
 const inquirer = require('inquirer');
-
-const stringSearchPrompt = require('./string-search');
-const disjointSetPrompt = require('./disjoint-set');
-const topoLogicalSortingPrompt = require('./topological-sorting');
-const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
-const priorityQueuePrompt = require('./priority-queue');
-const mstPrompt = require('./MST');
-const triePrompt = require('./trie');
-const lisPrompt = require('./LIS');
 
 inquirer
   .prompt([{
@@ -21,6 +13,7 @@ inquirer
       'longest increasing subsequence',
       'priority queue',
       'minimum spanning tree',
+      'shortest path',
       'trie'
     ],
     default: 0
@@ -29,27 +22,39 @@ inquirer
     console.log(answers.entry);
     switch (answers.entry) {
       case 'string search':
+        const stringSearchPrompt = require('./string-search');
         stringSearchPrompt();
         break;
       case 'disjoint set':
+        const disjointSetPrompt = require('./disjoint-set');
         disjointSetPrompt();
         break;
       case 'topological sorting':
+        const topoLogicalSortingPrompt = require('./topological-sorting');
         topoLogicalSortingPrompt();
         break;
       case 'pigeonhole principle':
+        const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
         pigeonholePrinciplePrompt();
         break;
       case 'longest increasing subsequence':
+        const lisPrompt = require('./LIS');
         lisPrompt();
         break;
       case 'priority queue':
+        const priorityQueuePrompt = require('./priority-queue');
         priorityQueuePrompt();
         break;
       case 'minimum spanning tree':
+        const mstPrompt = require('./MST');
         mstPrompt();
         break;
+      case 'shortest path':
+        const shortestPathPrompt = require('./shortest-path');
+        shortestPathPrompt();
+        break;
       case 'trie':
+        const triePrompt = require('./trie');
         triePrompt();
         break;
       default:
