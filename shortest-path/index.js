@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const randomGraph = require('../utils/randomGraph');
 
 const floyd = require('./floyd');
-// const kruskal_mst = require('./kruskal');
+const dijkstra = require('./dijkstra');
 
 module.exports = function () {
   inquirer
@@ -59,5 +59,6 @@ module.exports = function () {
       console.log(`[ ${edges.map(edge => `[ ${edge.join(', ')} ]`).join(', ')} ]\n`);
 
       console.log(`FLOYD:\nSUM:${floyd(size, edges)}\n`);
+      console.log(`DIJKSTRA:\nSUM:${dijkstra(size, edges)}\n`);
     });
 };
