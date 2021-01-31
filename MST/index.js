@@ -55,7 +55,7 @@ module.exports = function () {
         edges.push(numbers);
       }
 
-      if (!edges.length) edges = randomGraph(size, { type: 'mst' });
+      if (!edges.length) edges = randomGraph('mst', size);
 
       console.log(`[ ${edges.map(edge => `[ ${edge.join(', ')} ]`).join(', ')} ]\n`);
 

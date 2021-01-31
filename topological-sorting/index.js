@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 
 const wrap = require('../utils/wrap');
+const randomGraph = require('../utils/randomGraph');
 
 const topological_sorting_directed_dfs_stack = require('./directed/dfs/stack');
 const topological_sorting_directed_bfs_queue = require('./directed/bfs/queue');
@@ -8,21 +9,6 @@ const topological_sorting_directed_dfs_recursion = require('./directed/dfs/recur
 const topological_sorting_undirected_bfs_queue = require('./undirected/bfs/queue');
 const topological_sorting_undirected_dfs_stack = require('./undirected/dfs/stack');
 const topological_sorting_undirected_dfs_recursion = require('./undirected/dfs/recursion');
-
-const DEFAULT_EDGES = [
-  [0, 4],
-  [1, 2],
-  [2, 3],
-  [1, 4],
-  [2, 5],
-  [2, 6],
-  [3, 6],
-  [4, 8],
-  [5, 7],
-  [5, 8],
-  [6, 8],
-  [8, 9]
-];
 
 module.exports = function () {
   inquirer
@@ -37,7 +23,7 @@ module.exports = function () {
     }])
     .then(async answers => {
       const size = ~~answers.size;
-      const edges = [];
+      let edges = [];
 
       // eslint-disable-next-line no-constant-condition
       while (true) {
@@ -73,7 +59,7 @@ module.exports = function () {
         edges.push(numbers);
       }
 
-      if (!edges.length && size === 10) edges.splice(0, size, ...DEFAULT_EDGES);
+      if (!edges.length) edges = randomGraph('ts', size);
 
       console.log(`[ ${edges.map(edge => `[ ${edge.join(', ')} ]`).join(', ')} ]\n`);
 

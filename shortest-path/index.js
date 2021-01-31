@@ -54,10 +54,10 @@ module.exports = function () {
         edges.push(numbers);
       }
 
-      if (!edges.length) edges = randomGraph(size, { type: 'short' });
+      if (!edges.length) edges = randomGraph('sp', size);
 
       console.log(`[ ${edges.map(edge => `[ ${edge.join(', ')} ]`).join(', ')} ]\n`);
 
-      console.log(`FLOYD:\n${floyd(size, edges)}\n`);
+      console.log(`FLOYD:\nSUM:${floyd(size, edges)}\n`);
     });
 };

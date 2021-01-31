@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 
 const wrap = require('../utils/wrap');
+const randomNumbers = require('../utils/randomNumbers');
 
 const pigeonhole = require('./pigeonhole');
 
@@ -9,20 +10,26 @@ module.exports = function () {
     .prompt([{
       type: 'input',
       name: 'list',
-      message: 'Please input the numbers of the array',
-      default: '3 12 3 2 6 10 11 20 9 10 5 -1 8 7 1 0 14',
+      message: 'Please input the numbers of the array (empty for random)',
+      default: '1 3 2 -1',
       validate: input => {
         const regex = /(\w+(\s+|,|;))*\w+/
-        return regex.test(input);
+        return !input || regex.test(input);
       }
     }])
-    .then(answers => {
+    .then(async answers => {
       const list = answers.list;
-      const nums = list.split(/\s+|,|;/).map(r => {
-        let n = r.trim();
-        return /\d+/.test(n) ? ~~n : 0;
-      });
+      let nums = [];
 
-      wrap('EMPTY_PIGEONHOLES', pigeonhole)(nums);
+      if (!list) {
+        nums = await randomNumbers('pigeonhole');
+      } else {
+        nums = list.split(/\s+|,|;/).map(r => {
+          let n = r.trim();
+          return /\d+/.test(n) ? ~~n : 0;
+        });
+      }
+
+      wrap('MISSING_PIGEONS', pigeonhole)(nums);
     })
 };

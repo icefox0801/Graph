@@ -1,4 +1,6 @@
+const _ = require('lodash');
 const inquirer = require('inquirer');
+const randomWords = require('random-words');
 
 const kmp = require('./kmp');
 
@@ -8,12 +10,12 @@ module.exports = function () {
       type: 'input',
       name: 'str',
       message: 'Please input the string',
-      default: 'bbc abcdab abcdabcdabde'
+      default: randomWords(_.random(5, 10)).join(' ')
     }, {
       type: 'input',
       name: 'pattern',
       message: 'Please input the pattern',
-      default: 'abcdabd'
+      default: randomWords()[0]
     }])
     .then(answers => {
       const { str, pattern } = answers;
