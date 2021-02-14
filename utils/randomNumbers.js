@@ -22,6 +22,7 @@ async function generate (type = 'pigeonhole') {
 
       break;
     case 'LIS':
+    case 'monotonic':
       shuffled = _.shuffle(Array.from({ length: size }, () => _.random(-size, size - 1)));
       break;
     default:

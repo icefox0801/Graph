@@ -10,6 +10,7 @@ inquirer
       'disjoint set',
       'topological sorting',
       'pigeonhole principle',
+      'monotonic queue',
       'longest increasing subsequence',
       'priority queue',
       'minimum spanning tree',
@@ -36,6 +37,10 @@ inquirer
       case 'pigeonhole principle':
         const pigeonholePrinciplePrompt = require('./pigeonhole-principle');
         pigeonholePrinciplePrompt();
+        break;
+      case 'monotonic queue':
+        const monotonicQueuePrompt = require('./monotonic-queue');
+        monotonicQueuePrompt();
         break;
       case 'longest increasing subsequence':
         const lisPrompt = require('./LIS');
