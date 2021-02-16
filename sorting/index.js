@@ -36,12 +36,12 @@ module.exports = function () {
         });
       }
 
-      wrap('SELECTION SORT:', selectionSort, false)(nums.slice());
-      wrap('INSERTION SORT:', insertionSort, false)(nums.slice());
-      wrap('BUBBLE SORT:', bubbleSort, false)(nums.slice());
-      wrap('QUICK SORT:', quickSort, false)(nums.slice());
-      wrap('HEAP SORT:', heapSort, false)(nums.slice());
-      wrap('MERGE SORT:', mergeSort, false)(nums.slice());
-      wrap('COUNTING SORT:', countingSort, false)(nums.slice());
+      wrap('SELECTION SORT', selectionSort, false)(nums.slice());
+      wrap('INSERTION SORT', insertionSort, false)(nums.slice());
+      wrap('BUBBLE SORT', bubbleSort, false)(nums.slice());
+      wrap('QUICK SORT', quickSort, false)(nums.slice());
+      wrap('HEAP SORT', heapSort, false)(nums.slice());
+      wrap('MERGE SORT', mergeSort, false)(nums.slice());
+      wrap('COUNTING SORT', countingSort, false)(nums.slice());
     });
 };

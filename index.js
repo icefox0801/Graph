@@ -16,6 +16,7 @@ inquirer
       'priority queue',
       'minimum spanning tree',
       'shortest path',
+      'binary tree',
       'trie'
     ],
     default: 0
@@ -48,8 +49,8 @@ inquirer
         monotonicQueuePrompt();
         break;
       case 'longest increasing subsequence':
-        const lisPrompt = require('./LIS');
-        lisPrompt();
+        const LISPrompt = require('./LIS');
+        LISPrompt();
         break;
       case 'priority queue':
         const priorityQueuePrompt = require('./priority-queue');
@@ -62,6 +63,10 @@ inquirer
       case 'shortest path':
         const shortestPathPrompt = require('./shortest-path');
         shortestPathPrompt();
+        break;
+      case 'binary tree':
+        const binaryTreePrompt = require('./binary-tree');
+        binaryTreePrompt();
         break;
       case 'trie':
         const triePrompt = require('./trie');
