@@ -15,6 +15,9 @@ async function generate (type = 'pigeonhole') {
   let shuffled;
 
   switch (type) {
+    case 'sorting':
+      shuffled = _.shuffle(Array.from({ length: size }, (v, k) => k + _.random(-size >> 1, size >> 1)));
+      break;
     case 'pigeonhole':
       shuffled = _.shuffle(Array.from({ length: size }, (v, k) => k));
 

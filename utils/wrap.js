@@ -1,4 +1,4 @@
-module.exports = (title, func) => {
+module.exports = (title, func, traverse = true) => {
   const result = [];
 
   func.callback = v => {
@@ -6,7 +6,12 @@ module.exports = (title, func) => {
   }
 
   return function (...args) {
-    func(...args);
-    console.log(`${title}:\n${result.join(' → ')}\n`);
+    const r = func(...args);
+
+    if (!traverse) {
+      console.log(`${title}:\n${r.join(' → ')}\n`);
+    } else {
+      console.log(`${title}:\n${result.join(' → ')}\n`);
+    }
   };
 };

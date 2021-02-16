@@ -6,6 +6,7 @@ inquirer
     type: 'list',
     name: 'entry',
     choices: [
+      'sorting',
       'string search',
       'disjoint set',
       'topological sorting',
@@ -22,6 +23,10 @@ inquirer
   .then(answers => {
     console.log(answers.entry);
     switch (answers.entry) {
+      case 'sorting':
+        const sortingPrompt = require('./sorting');
+        sortingPrompt();
+        break;
       case 'string search':
         const stringSearchPrompt = require('./string-search');
         stringSearchPrompt();
